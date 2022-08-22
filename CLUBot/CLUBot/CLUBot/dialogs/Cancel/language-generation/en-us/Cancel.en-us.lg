@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_7m4gpM()
+[Activity
+    Text = ${SendActivity_7m4gpM_text()}
+]
+
+# SendActivity_7m4gpM_text()
+- Triggered Cancel

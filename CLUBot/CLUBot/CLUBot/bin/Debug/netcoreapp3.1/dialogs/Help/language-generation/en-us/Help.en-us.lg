@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_PAAtmi()
+[Activity
+    Text = ${SendActivity_PAAtmi_text()}
+]
+
+# SendActivity_PAAtmi_text()
+- Triggered Help

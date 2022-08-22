@@ -1,0 +1,165 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "CLUBot",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "comment": "This trigger runs when a conversation update activity is sent to the bot. This indicates a user or bot being added or removed from a conversation."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item",
+            "comment": "For each member added to the conversation."
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else",
+                "comment": "Checks that that member added ID does not match the bot ID. This prevents the greeting message from being sent when the bot is added to a conversation."
+              },
+              "condition": "=string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Greeting()}"
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u",
+        "comment": "This trigger fires when an incoming activity is not handled by any other trigger."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "QsaHQ7",
+            "comment": "POSTing the text sent by the user to CLU"
+          },
+          "resultProperty": "turn.cluResponse",
+          "method": "POST",
+          "url": "https://clubot.cognitiveservices.azure.com/language/:analyze-conversations?api-version=2022-05-01",
+          "headers": {
+            "Ocp-Apim-Subscription-Key": "<place here>"
+          },
+          "contentType": "application/json",
+          "responseType": "json",
+          "body": {
+            "kind": "Conversation",
+            "analysisInput": {
+              "conversationItem": {
+                "id": "${turn.activity.from.id}",
+                "text": "${turn.activity.text}",
+                "modality": "text",
+                "language": "en-us",
+                "participantId": "${turn.activity.from.id}"
+              }
+            },
+            "parameters": {
+              "projectName": "LUISCopy",
+              "verbose": true,
+              "deploymentName": "LUISCopy",
+              "stringIndexType": "TextElement_V8"
+            }
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "IlXCQy"
+          }
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "XsL2A1",
+            "comment": "Setting the a new property to hold the value of the captured intent."
+          },
+          "property": "conversation.topIntent",
+          "value": "${turn.cluResponse.content.result.prediction.topIntent}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "HGMTIw"
+          },
+          "activity": "${SendActivity_HGMTIw()}"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "wFK4UH"
+          },
+          "condition": "conversation.topIntent",
+          "cases": [
+            {
+              "value": "Cancel",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "MCBvp6"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "Cancel"
+                }
+              ]
+            },
+            {
+              "value": "Help",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "bAz6eD"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "Help"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "RYlHPE"
+              },
+              "activityProcessed": true,
+              "dialog": "IntentNotUnderstood"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "CLUBot.lg",
+  "id": "CLUBot",
+  "recognizer": "CLUBot.lu.qna"
+}

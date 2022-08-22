@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_a65UXf()
+[Activity
+    Text = ${SendActivity_a65UXf_text()}
+]
+
+# SendActivity_a65UXf_text()
+- I didn't understand what you meant. Please try again.

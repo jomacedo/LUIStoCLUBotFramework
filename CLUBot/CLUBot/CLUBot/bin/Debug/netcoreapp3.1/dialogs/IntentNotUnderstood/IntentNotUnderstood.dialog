@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "umjrNc",
+    "name": "IntentNotUnderstood",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "b2GLiD"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "a65UXf"
+          },
+          "activity": "${SendActivity_a65UXf()}"
+        }
+      ]
+    }
+  ],
+  "generator": "IntentNotUnderstood.lg",
+  "recognizer": "IntentNotUnderstood.lu.qna",
+  "id": "IntentNotUnderstood"
+}
