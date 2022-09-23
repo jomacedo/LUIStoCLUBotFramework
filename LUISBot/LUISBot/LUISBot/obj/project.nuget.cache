@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3FRZt2a9L4cIChth040WHTWFqJuMnIqoCyoaMp6y6sEY4CQqwajl/Hqz0Pg8ALti+9qcRcH8JbbS71TPq87caw==",
+  "dgSpecHash": "NUXQvhB6By/yF+ozLJ4DHU0b27aTMrWnKlOIFu3wHqeKybApmyzq7iOIIWik8aFwteOu9K8SwMhe1UmPaUkZXQ==",
   "success": true,
-  "projectFilePath": "C:\\Repos\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj",
+  "projectFilePath": "C:\\Repos\\LUIStoCLUBotFramework\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jomacedo\\.nuget\\packages\\adaptiveexpressions\\4.16.0\\adaptiveexpressions.4.16.0.nupkg.sha512",
     "C:\\Users\\jomacedo\\.nuget\\packages\\antlr4.runtime.standard\\4.8.0\\antlr4.runtime.standard.4.8.0.nupkg.sha512",
@@ -236,7 +236,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.Azure.KeyVault.Core 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.Azure.KeyVault.Core 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Azure.KeyVault.Core",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"

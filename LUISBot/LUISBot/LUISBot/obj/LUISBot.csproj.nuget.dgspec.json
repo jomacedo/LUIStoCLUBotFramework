@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj": {}
+    "C:\\Repos\\LUIStoCLUBotFramework\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj": {
+    "C:\\Repos\\LUIStoCLUBotFramework\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj",
+        "projectUniqueName": "C:\\Repos\\LUIStoCLUBotFramework\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj",
         "projectName": "LUISBot",
-        "projectPath": "C:\\Repos\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj",
+        "projectPath": "C:\\Repos\\LUIStoCLUBotFramework\\LUISBot\\LUISBot\\LUISBot\\LUISBot.csproj",
         "packagesPath": "C:\\Users\\jomacedo\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\LUISBot\\LUISBot\\LUISBot\\obj\\",
+        "outputPath": "C:\\Repos\\LUIStoCLUBotFramework\\LUISBot\\LUISBot\\LUISBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Repos\\LUISBot\\LUISBot\\LUISBot\\NuGet.Config",
+          "C:\\Repos\\LUIStoCLUBotFramework\\LUISBot\\LUISBot\\LUISBot\\NuGet.Config",
           "C:\\Users\\jomacedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -74,7 +74,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -86,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
