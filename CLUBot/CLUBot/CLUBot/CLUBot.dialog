@@ -82,17 +82,11 @@
               }
             },
             "parameters": {
-              "projectName": "LUISCopy",
+              "projectName": "<Language studio project name>",
               "verbose": true,
-              "deploymentName": "LUISCopy",
+              "deploymentName": "<Language studio deployment name>",
               "stringIndexType": "TextElement_V8"
             }
-          }
-        },
-        {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "IlXCQy"
           }
         },
         {
