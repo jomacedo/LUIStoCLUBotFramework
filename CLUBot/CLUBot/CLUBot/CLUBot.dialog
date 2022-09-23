@@ -78,7 +78,7 @@
                 "text": "${turn.activity.text}",
                 "modality": "text",
                 "language": "en-us",
-                "participantId": "${turn.activity.from.id}"
+                "participantId": "${participantId}"
               }
             },
             "parameters": {
